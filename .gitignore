@@ -1,6 +1,7 @@
 # Built application files
 *.apk
 *.ap_
+*.iml
 
 # Files for the Dalvik VM
 *.dex
@@ -15,6 +16,7 @@ gen/
 # Gradle files
 .gradle/
 build/
+.idea/
 
 # Local configuration file (sdk path, etc)
 local.properties
