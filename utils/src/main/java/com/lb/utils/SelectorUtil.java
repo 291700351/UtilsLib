@@ -64,7 +64,7 @@ public class SelectorUtil {
      * @param pressed 按下状态的Drawable对象
      * @return 按下和转产状态的状态选择器
      */
-    public static StateListDrawable createPressedSelector(Drawable normal, Drawable pressed) {
+    public static StateListDrawable createNormalAndPressedSelector(Drawable normal, Drawable pressed) {
         LinkedHashMap<int[], Drawable> states = new LinkedHashMap<>();
         states.put(new int[]{android.R.attr.state_pressed}, pressed);
         states.put(new int[]{}, normal);
