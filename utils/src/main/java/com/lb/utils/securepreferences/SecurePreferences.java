@@ -49,16 +49,13 @@ import javax.crypto.spec.SecretKeySpec;
 /**
  * This is the old v.0.4.0 class only kept to help with migration in future
  * versions.
- * <p/>
  * Wrapper class for Android's {@link SharedPreferences}
  * interface, which adds a layer of encryption to the persistent storage and
  * retrieval of sensitive key-value pairs of primitive data types.
- * <p/>
  * This class provides important - but nevertheless imperfect - protection
  * against simple attacks by casual snoopers. It is crucial to remember that
  * even encrypted data may still be susceptible to attacks, especially on rooted
  * or stolen devices!
- * <p/>
  *
  * @see <a
  * href="http://www.codeproject.com/Articles/549119/Encryption-Wrapper-for-Android-SharedPreferences">CodeProject
@@ -295,8 +292,8 @@ public class SecurePreferences implements SharedPreferences {
      * Added to get a values as as it can be useful to store values that are
      * already encrypted and encoded
      *
-     * @param key
-     * @param defaultValue
+     * @param key key
+     * @param defaultValue 默认值
      * @return Unencrypted value of the key or the defaultValue if
      */
     public String getStringUnencrypted(String key, String defaultValue) {
@@ -390,7 +387,6 @@ public class SecurePreferences implements SharedPreferences {
 
     /**
      * Wrapper for Android's {@link SharedPreferences.Editor}.
-     * <p/>
      * Used for modifying values in a {@link SecurePreferences} object. All
      * changes you make in an editor are batched, and not copied back to the
      * original {@link SecurePreferences} until you call {@link #commit()} or
@@ -419,7 +415,7 @@ public class SecurePreferences implements SharedPreferences {
          *
          * @param key   - encrypted as usual
          * @param value will not be encrypted
-         * @return
+         * @return editor
          */
         public SharedPreferences.Editor putStringNoEncrypted(String key,
                                                              String value) {

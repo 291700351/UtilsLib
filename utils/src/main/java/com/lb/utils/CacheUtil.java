@@ -26,8 +26,9 @@ public class CacheUtil {
     /**
      * 保存数据到sp中
      *
-     * @param key   键
-     * @param value 值
+     * @param context 上下文对象
+     * @param key     键
+     * @param value   值
      */
     public static void put(Context context, String key, Object value) {
         if (null == sp)
@@ -108,6 +109,7 @@ public class CacheUtil {
     /**
      * 从缓存中获取一个int，没有缓存就使用传入的默认值
      *
+     * @param context  上下文对象
      * @param key      存储的键名
      * @param defValue 默认值
      * @return 如果sp中缓存了该值就使用  否则返回默认值
@@ -131,6 +133,7 @@ public class CacheUtil {
     /**
      * 获取黄埙的boolean值
      *
+     * @param context  上下文对象
      * @param key      键名
      * @param defValue 默认值
      * @return 拿不到就使用默认值
@@ -155,6 +158,7 @@ public class CacheUtil {
     /**
      * 从sp缓存中获取一个float类型的值
      *
+     * @param context  上下文对象
      * @param key      缓存的键
      * @param defValue 如果取值娶不到使用默认的值
      * @return sp中缓存的值
@@ -179,6 +183,7 @@ public class CacheUtil {
     /**
      * 从sp缓存中获取一个long类型的值
      *
+     * @param context  上下文对象
      * @param key      缓存的键
      * @param defValue 如果取值娶不到使用默认的值
      * @return sp中缓存的值

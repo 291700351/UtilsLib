@@ -60,6 +60,7 @@ public class ApplicationUtil {
     /**
      * 获取应用程序的版本名称
      *
+     * @param context 上下文对象
      * @return 程序对应的本本名称，用于显示当前版本
      */
     public static String getVersionName(Context context) {

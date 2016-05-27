@@ -44,7 +44,7 @@ public class LogUtil {
     private static String TAG = "LogUtil";
 
     /**
-     * 是否是Debug模式，可以在全局的application中设置是否打印日志。<br/>
+     * 是否是Debug模式，可以在全局的application中设置是否打印日志。
      * true:会打印日志。false:不答应日志
      */
     public static boolean isDebug = true;
