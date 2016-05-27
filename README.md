@@ -1,5 +1,11 @@
 #一些Android开发常用的工具方法的封装
 
+###AndroidStudio引入
+    dependencies {
+        compile 'com.lb:utils:1.0.0'
+    }
+
+
 ##ActivityManager
 **Activity管理的工具类，使用栈管理开启的Activity，单例模式**
 
