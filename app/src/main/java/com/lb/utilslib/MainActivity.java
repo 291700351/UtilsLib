@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.lb.utils.CacheUtil;
 import com.lb.utils.DrawableUtil;
+import com.lb.utils.EncryptUtil;
+import com.lb.utils.LogUtil;
 import com.lb.utils.SelectorUtil;
 import com.lb.utils.ToastUtil;
 import com.lb.utils.ViewUtil;
@@ -27,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
         GradientDrawable drawableN = DrawableUtil.createRectangleDrawable(Color.GREEN, 30f, 10f, 10f, 30f);
         GradientDrawable drawableP = DrawableUtil.createRectangleDrawable(Color.RED, 30f, 10f, 10f, 30f);
 
-        StateListDrawable selector = SelectorUtil.createPressedSelector(drawableN, drawableP);
+        StateListDrawable selector = SelectorUtil.createNormalAndPressedSelector(drawableN, drawableP);
+
 
         tv.setBackgroundDrawable(selector);
 
@@ -39,6 +42,14 @@ public class MainActivity extends AppCompatActivity {
                 ToastUtil.showShortToast(MainActivity.this, String.valueOf(CacheUtil.getString(MainActivity.this, "key", "ajdkjadask")));
             }
         });
+
+
+        LogUtil.initLog(true, LogUtil.Level.e);
+        String desDecrypt = EncryptUtil.desEncrypt("key", "This is data");
+        LogUtil.log(this, "加密之后：" + desDecrypt);
+
+        String data = EncryptUtil.desDecrypt("key", desDecrypt);
+        LogUtil.log(this, "解密之后：" + data);
 
     }
 }
