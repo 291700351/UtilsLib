@@ -1,12 +1,44 @@
 #一些Android开发常用的工具方法的封装
 
-###AndroidStudio引入
-    dependencies {
-        compile 'com.lb:utils:1.0.1'
-    }
+###使用
+- AndroidStudio引入
 
+        dependencies {
+            compile 'com.lb:utils:1.0.2'
+        }
+
+- Eclipse引入jar：执行以下代码片段
+    
+        git clone https://github.com/291700351/UtilsLib.git
+        cd UtilsLib/utils
+        gradle build
+        gradle makeJar
+        
+        
+*执行完毕之后，会在utlis目录下面生成build文件夹。jar所在文件目录结构如下：*
+        
+        -UtilsLib
+            -utils
+                -build
+                    -docs:JavaDoc文档
+                    -outputs：构建好的jar文件和aar文件将会在这个目录，eclipse直接使用构建完成的jar文件
+
+    
+        
+<hr>
 *NODE:*
-## 新增EncryptUtil类,数据加密的工具类，禁止实例化该类对象
+## 1.0.2新增JsonUtils类，封装Gson对json数据进行操作的工具类，该类禁止实例化
+    
+    String json = JsonUtil.parseMapToJson(map);//将map数据转换成json字符串
+    JavaBean bean = JsonUtil.jsonToBean(json,JavaBean.class);//将json转换成javabean对象
+    。。。。。。
+    
+##utils中的build.gradle添加makeJar任务，具体使用参见Eclipse引入jar包使用方法
+
+<br>
+<br>
+<hr>
+## 1.0.1新增EncryptUtil类,数据加密的工具类，禁止实例化该类对象
 - 提供MD5数据加密
 - 提供Des数据加密、解密方法
 
@@ -16,7 +48,9 @@
     LogUtil.log("TAG", "msg");
     LogUtil.log(obj, "msg");
     LogUtil.log(obj, obj);
+    
 <hr/>    
+
 ##ActivityManager
 **Activity管理的工具类，使用栈管理开启的Activity，单例模式**
 
