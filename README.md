@@ -2,10 +2,21 @@
 
 ###AndroidStudio引入
     dependencies {
-        compile 'com.lb:utils:1.0.0'
+        compile 'com.lb:utils:1.0.1'
     }
 
+*NODE:*
+## 新增EncryptUtil类,数据加密的工具类，禁止实例化该类对象
+- 提供MD5数据加密
+- 提供Des数据加密、解密方法
 
+*LogUtil新增指定日志级别*
+- 在应用程序的Application中调用LogUtil.initLog()方法指定是否是Debug模式和使用的Log级别
+
+    LogUtil.log("TAG", "msg");
+    LogUtil.log(obj, "msg");
+    LogUtil.log(obj, obj);
+<hr/>    
 ##ActivityManager
 **Activity管理的工具类，使用栈管理开启的Activity，单例模式**
 
@@ -74,3 +85,4 @@ Log日志级别目前只有e级别的，默认是Debug状态的，可以在你�
     //免去每次findViewById之后进行控件的强制类型转换
     TextView tv = ViewUtil.findViewById(activity,R.id.tv);
     TextView tv = ViewUtil.findViewById(view,R.id.tv);
+
